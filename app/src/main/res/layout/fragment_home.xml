@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:text="Hi, John"
+            android:text="Hi, User"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -46,6 +46,35 @@
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_profilhome"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+
+                <ImageButton
+                    android:id="@+id/ib_profilhome"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/view"
+                    tools:src="@tools:sample/avatars" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <SearchView
             android:id="@+id/sv_home"
@@ -80,11 +109,11 @@
             android:textColor="@color/black"
             android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_pemberitahuan" />
 
 
         <TextView
-            android:id="@+id/tv_see_all"
+            android:id="@+id/tv_see_all2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -93,7 +122,7 @@
             android:textColor="@color/blue"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_pemberitahuan" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -132,7 +161,7 @@
                         android:id="@+id/tv_cat1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" User Experience "
+                        android:text=" Materi "
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:gravity="center"/>
@@ -167,7 +196,7 @@
                         android:id="@+id/tv_cat2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="User Interface"
+                        android:text="Tugas"
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:gravity="center"/>
@@ -202,7 +231,7 @@
                         android:id="@+id/tv_cat3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Desain tolls"
+                        android:text="Nilai"
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:gravity="center"/>
@@ -237,7 +266,7 @@
                         android:id="@+id/tv_cat4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Visual Desain Fundamentals"
+                        android:text="Forum"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:gravity="center"/>
@@ -261,7 +290,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <TextView
-            android:id="@+id/tv_see_all2"
+            android:id="@+id/tv_see_all3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -282,8 +311,46 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_populer"
-            tools:listitem="@layout/item_course"
-            />
+            tools:listitem="@layout/item_course"/>
+
+        <TextView
+            android:id="@+id/tv_Pemberitahuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Pemberitahuan"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/tv_see_all1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:text="See All"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pemberitahuan"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Pemberitahuan"
+            tools:listitem="@layout/item_pemberitahuan" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
