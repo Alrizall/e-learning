@@ -106,105 +106,141 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_cat1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@color/yellow">
 
                     <ImageView
+                        android:id="@+id/iv_cat1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/shopping_cart" />
+                        android:src="@drawable/library" />
 
                     <TextView
+                        android:id="@+id/tv_cat1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="materi A" />
+                        android:text=" User Experience "
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_cat2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@color/green">
 
                     <ImageView
+                        android:id="@+id/iv_cat2"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/shopping_cart" />
+                        android:src="@drawable/study_tools" />
 
                     <TextView
+                        android:id="@+id/tv_cat2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="materi A" />
+                        android:text="User Interface"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_cat3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@color/aqua">
 
                     <ImageView
+                        android:id="@+id/iv_cat3"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/shopping_cart" />
+                        android:src="@drawable/student" />
 
                     <TextView
+                        android:id="@+id/tv_cat3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="materi A" />
+                        android:text="Desain tolls"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_cat4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="15dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@color/purple">
 
                     <ImageView
+                        android:id="@+id/iv_cat4"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/shopping_cart" />
+                        android:src="@drawable/online_learning" />
 
                     <TextView
+                        android:id="@+id/tv_cat4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="materi A" />
+                        android:text="Visual Desain Fundamentals"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -218,7 +254,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
-            android:text="Populer course"
+            android:text="Quiz"
             android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -248,6 +284,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_populer"
             tools:listitem="@layout/item_course"
             />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>
