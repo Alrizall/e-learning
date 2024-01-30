@@ -5,12 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.my_e_learning.databinding.FragmentHomeBinding
+import com.example.my_e_learning.databinding.FragmentLoginBinding
+import com.example.my_e_learning.databinding.FragmentProfilBinding
 
 
-class FragmentHome : Fragment() {
+class FragmentProfil : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding : FragmentProfilBinding? = null
     private val binding get() = _binding!!
 
 
@@ -18,7 +19,7 @@ class FragmentHome : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentProfilBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,7 +29,11 @@ class FragmentHome : Fragment() {
     }
 
     private fun initView (){
-        binding.textView.text = "Hi, Alrizal"
+        binding.tvUsername.text = "alrizal"
+        binding.tvNis.text = (1000  .. 9999).random().toString()
+        binding.tvNamaProfil.text = "Moch alrizal"
+        binding.tvAlamat.text = "jalan no 1"
+        binding.tvJurusan.text = "tkj"
     }
 
     override fun onDestroyView() {
