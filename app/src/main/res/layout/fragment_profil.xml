@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentProfil"
+    tools:context=".profil.FragmentProfil"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FragmentProfil">
+        tools:context=".profil.FragmentProfil">
 
         <View
             android:id="@+id/view_profil"
@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/ib_profil"
+            android:id="@+id/ib_back_profil"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginStart="20dp"
@@ -40,7 +40,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/view_profil"
-            app:layout_constraintTop_toBottomOf="@+id/ib_profil"
+            app:layout_constraintTop_toBottomOf="@+id/ib_back_profil"
             tools:src="@tools:sample/avatars" />
 
         <TextView

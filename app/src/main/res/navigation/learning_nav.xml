@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/fragmentHome"
-        android:name="com.example.my_e_learning.FragmentHome"
+        android:name="com.example.my_e_learning.home.FragmentHome"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/fragmentProfil"
-        android:name="com.example.my_e_learning.FragmentProfil"
+        android:name="com.example.my_e_learning.profil.FragmentProfil"
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profil" />
 </navigation>

@@ -16,7 +16,7 @@
             android:id="@+id/view_quiz"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:background="@color/aqua"
+            android:background="@color/purple"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Hasil NIlai"
+            android:text="Quiz"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -34,19 +34,6 @@
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_nilai"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_quiz"
-            tools:listitem="@layout/item_nilai" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
