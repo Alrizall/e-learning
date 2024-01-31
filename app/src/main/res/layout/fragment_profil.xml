@@ -67,12 +67,12 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_username" />
 
         <Button
-            android:id="@+id/btn_edt_Profil"
+            android:id="@+id/btn_logout"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
-            android:text="Edit Profil"
+            android:text="Logout"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/tv_nis" />
 

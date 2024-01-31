@@ -5,11 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.my_e_learning.databinding.FragmentHomeBinding
+import com.example.my_e_learning.fitur.LoginViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class FragmentHome : Fragment() {
-
+    private val viewModel : LoginViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -28,7 +32,12 @@ class FragmentHome : Fragment() {
     }
 
     private fun initView (){
-        binding.textView.text = "Hi, Alrizal"
+        if (viewModel.getUserName().isEmpty()) {
+            findNavController().navigate(FragmentHomeDirections.actionFragmentHomeToFragmentLogin()) }
+        else {
+            binding.textView.text = "Hi, ${viewModel.getUserName()}"
+        }
+
     }
 
     override fun onDestroyView() {
