@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_fragmentHome_to_fragmentTugas"
             app:destination="@id/fragmentTugas" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentQuiz"
+            app:destination="@id/fragmentQuiz" />
     </fragment>
     <fragment
         android:id="@+id/fragmentProfil"
@@ -56,4 +59,9 @@
         android:id="@+id/fragmentTugas"
         android:name="com.example.my_e_learning.fitur.tugas.FragmentTugas"
         android:label="FragmentTugas" />
+    <fragment
+        android:id="@+id/fragmentQuiz"
+        android:name="com.example.my_e_learning.fitur.quiz.FragmentQuiz"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" />
 </navigation>

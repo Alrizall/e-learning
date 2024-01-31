@@ -44,7 +44,8 @@ class FragmentHome : Fragment() {
                 findNavController().navigate(R.id.action_fragmentHome_to_fragmentTugas)
             }
             binding.cvCat3.setOnClickListener {
-                Toast.makeText(it.context, " Fitur belum Tersedia", Toast.LENGTH_SHORT).show()
+                findNavController().navigate((R.id.action_fragmentHome_to_fragmentQuiz))
+//                Toast.makeText(it.context, " Fitur belum Tersedia", Toast.LENGTH_SHORT).show()
             }
             binding.cvCat4.setOnClickListener {
                 findNavController().navigate(R.id.action_fragmentHome_to_fragmentNilai)
