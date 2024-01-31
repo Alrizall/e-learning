@@ -7,16 +7,25 @@
 
     <fragment
         android:id="@+id/fragmentHome"
-        android:name="com.example.my_e_learning.home.FragmentHome"
+        android:name="com.example.my_e_learning.fitur.home.FragmentHome"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_fragmentHome_to_fragmentLogin"
             app:destination="@id/fragmentLogin" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentNilai"
+            app:destination="@id/fragmentNilai" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentMateri"
+            app:destination="@id/fragmentMateri" />
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentTugas"
+            app:destination="@id/fragmentTugas" />
     </fragment>
     <fragment
         android:id="@+id/fragmentProfil"
-        android:name="com.example.my_e_learning.profil.FragmentProfil"
+        android:name="com.example.my_e_learning.fitur.profil.FragmentProfil"
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profil" >
         <action
@@ -25,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentLogin"
-        android:name="com.example.my_e_learning.fitur.FragmentLogin"
+        android:name="com.example.my_e_learning.fitur.login.FragmentLogin"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -34,4 +43,17 @@
             app:popUpTo="@id/fragmentHome"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentNilai"
+        android:name="com.example.my_e_learning.fitur.nilai.FragmentNilai"
+        android:label="FragmentNilai" />
+    <fragment
+        android:id="@+id/fragmentMateri"
+        android:name="com.example.my_e_learning.fitur.materi.FragmentMateri"
+        android:label="fragment_materi"
+        tools:layout="@layout/fragment_materi" />
+    <fragment
+        android:id="@+id/fragmentTugas"
+        android:name="com.example.my_e_learning.fitur.tugas.FragmentTugas"
+        android:label="FragmentTugas" />
 </navigation>

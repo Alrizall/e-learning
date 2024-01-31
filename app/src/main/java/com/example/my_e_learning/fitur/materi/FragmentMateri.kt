@@ -1,10 +1,11 @@
-package com.example.my_e_learning.materi
+package com.example.my_e_learning.fitur.materi
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.my_e_learning.databinding.FragmentMateriBinding
 
 class FragmentMateri : Fragment() {
@@ -26,8 +27,11 @@ class FragmentMateri : Fragment() {
     }
 
     private fun initView() {
-
+        binding.tvBackMateri.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

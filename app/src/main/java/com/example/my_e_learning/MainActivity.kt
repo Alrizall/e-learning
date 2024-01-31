@@ -24,12 +24,14 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.fragmentLogin -> {
-                    binding.bottomNavigationView.visibility = View.GONE
-                }
-
-                else -> {
+                R.id.fragmentHome -> {
                     binding.bottomNavigationView.visibility = View.VISIBLE
+                }
+                R.id.fragmentProfil -> {
+                    binding.bottomNavigationView.visibility = View.VISIBLE
+                }
+                else -> {
+                    binding.bottomNavigationView.visibility = View.GONE
                 }
             }
         }

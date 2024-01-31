@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentQuiz"
+    tools:context=".fitur.quiz.FragmentQuiz"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,15 +25,16 @@
             android:id="@+id/tv_back_quiz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/tombol_back"
             android:gravity="center"
+            android:padding="10dp"
             android:text="Quiz"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:drawableStart="@drawable/tombol_back"
-            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

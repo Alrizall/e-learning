@@ -1,4 +1,4 @@
-package com.example.my_e_learning.profil
+package com.example.my_e_learning.fitur.profil
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.my_e_learning.databinding.FragmentProfilBinding
-import com.example.my_e_learning.fitur.LoginViewModel
+import com.example.my_e_learning.fitur.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,10 +1,11 @@
-package com.example.my_e_learning
+package com.example.my_e_learning.fitur.nilai
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.my_e_learning.databinding.FragmentNilaiBinding
 
 class FragmentNilai : Fragment() {
@@ -26,6 +27,9 @@ class FragmentNilai : Fragment() {
     }
 
     private fun initView() {
+        binding.tvBackNilai.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
     override fun onDestroyView() {
         super.onDestroyView()
