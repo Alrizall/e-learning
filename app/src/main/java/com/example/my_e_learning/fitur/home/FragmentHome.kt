@@ -12,20 +12,24 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.my_e_learning.R
 import com.example.my_e_learning.data.DashboardInformation
+import com.example.my_e_learning.data.DuedateInformation
 import com.example.my_e_learning.databinding.FragmentHomeBinding
+import com.example.my_e_learning.fitur.home.adapter.DuedateAdapter
 import com.example.my_e_learning.fitur.home.adapter.PemberitahuanAdapter
 import com.example.my_e_learning.fitur.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListener {
+class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListener,
+    DuedateAdapter.DuedateAdapterListener {
     private val loginViewModel: LoginViewModel by viewModels()
     private val homeViewModel : HomeViewModel by viewModels ()
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     private val pemberitahuanAdapter : PemberitahuanAdapter by lazy { PemberitahuanAdapter(this) }
+    private val duedateAdapter : DuedateAdapter by lazy {DuedateAdapter(this)}
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,6 +67,11 @@ class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListen
                 adapter = pemberitahuanAdapter
             }
             pemberitahuanAdapter.submitList(homeViewModel.dashboardInformationProvider())
+
+            binding.rvPopuler.apply {
+                adapter = duedateAdapter
+            }
+            duedateAdapter.submitList(homeViewModel.duedateInformationProvider())
         }
 
     }
@@ -77,6 +86,10 @@ class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListen
         val i = Intent(ACTION_VIEW, Uri.parse("https://www.google.com"))
         i.setPackage("com.android.chrome")
         startActivity(i)
+    }
+
+    override fun onclick(data: DuedateInformation) {
+        findNavController().navigate(R.id.action_fragmentHome_to_fragmentTugas)
     }
 
 }
