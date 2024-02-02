@@ -75,7 +75,11 @@
     <fragment
         android:id="@+id/fragmentDetailMateri"
         android:name="com.example.my_e_learning.fitur.materi.FragmentDetailMateri"
-        android:label="FragmentDetailMateri" />
+        android:label="FragmentDetailMateri" >
+        <argument
+            android:name="idMateri"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentDetailTugas"
         android:name="com.example.my_e_learning.fitur.tugas.FragmentDetailTugas"

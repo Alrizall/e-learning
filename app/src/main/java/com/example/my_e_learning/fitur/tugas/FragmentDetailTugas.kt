@@ -9,9 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.example.my_e_learning.R
-import com.example.my_e_learning.data.TugasInformation
-import com.example.my_e_learning.databinding.FragmentDetailMateriBinding
 import com.example.my_e_learning.databinding.FragmentDetailTugasBinding
 import dagger.hilt.android.AndroidEntryPoint
 

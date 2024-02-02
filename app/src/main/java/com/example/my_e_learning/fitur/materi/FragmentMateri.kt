@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.my_e_learning.R
 import com.example.my_e_learning.databinding.FragmentMateriBinding
+import com.example.my_e_learning.fitur.tugas.FragmentTugasDirections
 
 class FragmentMateri : Fragment() {
 
@@ -31,8 +32,17 @@ class FragmentMateri : Fragment() {
         binding.tvBackMateri.setOnClickListener {
             findNavController().popBackStack()
         }
-        binding.cvMateri1.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentMateri_to_fragmentDetailMateri)
+        binding.cvMateri1.setOnClickListener{
+            findNavController().navigate(FragmentMateriDirections.actionFragmentMateriToFragmentDetailMateri(1))
+        }
+        binding.cvMateri2.setOnClickListener{
+            findNavController().navigate(FragmentMateriDirections.actionFragmentMateriToFragmentDetailMateri(2))
+        }
+        binding.cvMateri3.setOnClickListener{
+            findNavController().navigate(FragmentMateriDirections.actionFragmentMateriToFragmentDetailMateri(3))
+        }
+        binding.cvMateri4.setOnClickListener{
+            findNavController().navigate(FragmentMateriDirections.actionFragmentMateriToFragmentDetailMateri(4))
         }
     }
 

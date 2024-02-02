@@ -16,12 +16,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
-        android:id="@+id/tv_back_deaill_materi"
+        android:id="@+id/tv_back_detaill_materi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:drawableStart="@drawable/tombol_back"
         android:gravity="center_horizontal"
         android:padding="10dp"
         android:text="User Interface"
@@ -29,6 +29,16 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/view_dtl_materi1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_tomboolback_detail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/tombol_back"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_dtl_materi1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -45,6 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view_dtl_materi1" />
 
     <ImageView
+        android:id="@+id/iv_detail_materi"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/ui_ux_desain"
