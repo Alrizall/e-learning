@@ -54,14 +54,34 @@
         android:id="@+id/fragmentMateri"
         android:name="com.example.my_e_learning.fitur.materi.FragmentMateri"
         android:label="fragment_materi"
-        tools:layout="@layout/fragment_materi" />
+        tools:layout="@layout/fragment_materi" >
+        <action
+            android:id="@+id/action_fragmentMateri_to_fragmentDetailMateri"
+            app:destination="@id/fragmentDetailMateri" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentTugas"
         android:name="com.example.my_e_learning.fitur.tugas.FragmentTugas"
-        android:label="FragmentTugas" />
+        android:label="FragmentTugas" >
+        <action
+            android:id="@+id/action_fragmentTugas_to_fragmentDetailTugas"
+            app:destination="@id/fragmentDetailTugas" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentQuiz"
         android:name="com.example.my_e_learning.fitur.quiz.FragmentQuiz"
         android:label="fragment_quiz"
         tools:layout="@layout/fragment_quiz" />
+    <fragment
+        android:id="@+id/fragmentDetailMateri"
+        android:name="com.example.my_e_learning.fitur.materi.FragmentDetailMateri"
+        android:label="FragmentDetailMateri" />
+    <fragment
+        android:id="@+id/fragmentDetailTugas"
+        android:name="com.example.my_e_learning.fitur.tugas.FragmentDetailTugas"
+        android:label="FragmentDetailTugas" >
+        <argument
+            android:name="idTugas"
+            app:argType="integer" />
+    </fragment>
 </navigation>

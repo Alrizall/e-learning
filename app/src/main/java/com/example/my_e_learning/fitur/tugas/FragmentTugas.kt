@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.my_e_learning.R
+import com.example.my_e_learning.data.TugasInformation
 import com.example.my_e_learning.databinding.FragmentMateriBinding
 import com.example.my_e_learning.databinding.FragmentTugasBinding
 
@@ -31,12 +33,21 @@ class FragmentTugas : Fragment() {
         binding.imageView2.setOnClickListener {
             findNavController().popBackStack()
         }
-
+        binding.cvTugas1.setOnClickListener{
+            findNavController().navigate(FragmentTugasDirections.actionFragmentTugasToFragmentDetailTugas(1))
+        }
+        binding.cvTugas2.setOnClickListener{
+            findNavController().navigate(FragmentTugasDirections.actionFragmentTugasToFragmentDetailTugas(2))
+        }
+        binding.cvTugas3.setOnClickListener{
+            findNavController().navigate(FragmentTugasDirections.actionFragmentTugasToFragmentDetailTugas(3))
+        }
     }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }
 
 

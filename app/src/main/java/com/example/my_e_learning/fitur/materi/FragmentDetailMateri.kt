@@ -1,24 +1,23 @@
 package com.example.my_e_learning.fitur.materi
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.my_e_learning.R
-import com.example.my_e_learning.databinding.FragmentMateriBinding
+import com.example.my_e_learning.databinding.FragmentDetailMateriBinding
 
-class FragmentMateri : Fragment() {
 
-    private var _binding: FragmentMateriBinding? = null
+class FragmentDetailMateri : Fragment() {
+    private var _binding: FragmentDetailMateriBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMateriBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailMateriBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,18 +27,12 @@ class FragmentMateri : Fragment() {
     }
 
     private fun initView() {
-        binding.tvBackMateri.setOnClickListener {
+        binding.tvBackDeaillMateri.setOnClickListener {
             findNavController().popBackStack()
         }
-        binding.cvMateri1.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentMateri_to_fragmentDetailMateri)
-        }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
-
-
