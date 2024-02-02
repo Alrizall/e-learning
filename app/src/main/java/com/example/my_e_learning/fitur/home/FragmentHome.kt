@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.example.my_e_learning.R
 import com.example.my_e_learning.data.DashboardInformation
 import com.example.my_e_learning.data.DuedateInformation
@@ -24,12 +25,12 @@ import dagger.hilt.android.AndroidEntryPoint
 class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListener,
     DuedateAdapter.DuedateAdapterListener {
     private val loginViewModel: LoginViewModel by viewModels()
-    private val homeViewModel : HomeViewModel by viewModels ()
+    private val homeViewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private val pemberitahuanAdapter : PemberitahuanAdapter by lazy { PemberitahuanAdapter(this) }
-    private val duedateAdapter : DuedateAdapter by lazy {DuedateAdapter(this)}
+    private val pemberitahuanAdapter: PemberitahuanAdapter by lazy { PemberitahuanAdapter(this) }
+    private val duedateAdapter: DuedateAdapter by lazy { DuedateAdapter(this) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,6 +49,8 @@ class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListen
         if (loginViewModel.getUserName().isEmpty()) {
             findNavController().navigate(FragmentHomeDirections.actionFragmentHomeToFragmentLogin())
         } else {
+            Glide.with(binding.ibProfilhome.context).load(R.drawable.pass_foto)
+                .into(binding.ibProfilhome)
             binding.cvCat1.setOnClickListener {
                 findNavController().navigate(R.id.action_fragmentHome_to_fragmentMateri)
             }
@@ -56,7 +59,6 @@ class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListen
             }
             binding.cvCat3.setOnClickListener {
                 findNavController().navigate((R.id.action_fragmentHome_to_fragmentQuiz))
-//                Toast.makeText(it.context, " Fitur belum Tersedia", Toast.LENGTH_SHORT).show()
             }
             binding.cvCat4.setOnClickListener {
                 findNavController().navigate(R.id.action_fragmentHome_to_fragmentNilai)
@@ -73,7 +75,6 @@ class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListen
             }
             duedateAdapter.submitList(homeViewModel.duedateInformationProvider())
         }
-
     }
 
 

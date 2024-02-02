@@ -21,7 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/ib_back_profil"
             android:layout_width="25dp"
             android:layout_height="25dp"
@@ -32,12 +32,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView_profil"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
+            app:shapeAppearanceOverlay="@style/roundCustomCorner"
             app:layout_constraintStart_toStartOf="@+id/view_profil"
             app:layout_constraintTop_toBottomOf="@+id/ib_back_profil"
             tools:src="@tools:sample/avatars" />
@@ -50,8 +52,8 @@
             android:text="Username"
             android:textColor="@color/black"
             android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            app:layout_constraintStart_toEndOf="@+id/imageView_profil"
+            app:layout_constraintTop_toTopOf="@+id/imageView_profil" />
 
         <TextView
             android:id="@+id/tv_nis"
@@ -62,7 +64,7 @@
             android:text="12345678"
             android:textColor="@color/black"
             android:textSize="15sp"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/imageView_profil"
             app:layout_constraintTop_toBottomOf="@+id/tv_username" />
 
         <Button
@@ -72,7 +74,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:text="Logout"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/imageView_profil"
             app:layout_constraintTop_toBottomOf="@+id/tv_nis" />
 
         <LinearLayout

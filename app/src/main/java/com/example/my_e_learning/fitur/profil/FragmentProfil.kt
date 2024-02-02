@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import com.example.my_e_learning.R
 import com.example.my_e_learning.databinding.FragmentProfilBinding
 import com.example.my_e_learning.fitur.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,12 +39,14 @@ class FragmentProfil : Fragment() {
 
                 findNavController().navigate(FragmentProfilDirections.actionFragmentProfilToFragmentLogin())
             }
+            Glide.with(binding.imageViewProfil.context).load(R.drawable.pass_foto).into(binding.imageViewProfil)
             binding.tvUsername.text = viewModel.getUserName()
             binding.tvNis.text = (1000  .. 9999).random().toString()
-            binding.tvNamaProfil.text = "Moch alrizal"
-            binding.tvAlamat.text = "jalan no 1"
-            binding.tvJurusan.text = "tkj"
+            binding.tvNamaProfil.text = viewModel.getUserName()
+            binding.tvAlamat.text = "Jalan Villa Regency 1, Blok OB 8 no.29"
+            binding.tvJurusan.text = "Teknik Komputer Jaringan"
         }
+
 
     }
 

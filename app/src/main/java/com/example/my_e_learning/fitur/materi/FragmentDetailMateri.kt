@@ -38,7 +38,8 @@ class FragmentDetailMateri : Fragment() {
         binding.ivTomboolbackDetail.setOnClickListener {
             findNavController().popBackStack()
         }
-        binding.tvDetailMateri.text = data.decription
+        binding.tvDetailMateri.text = data.decription1
+        binding.tvDetailMateri2.text = data.decription2
         Glide.with(binding.ivDetailMateri.context).load(data.image).into(binding.ivDetailMateri)
         binding.tvBackDetaillMateri.text = data.title
     }
