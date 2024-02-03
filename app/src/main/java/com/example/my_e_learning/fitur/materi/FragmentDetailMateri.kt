@@ -37,9 +37,13 @@ class FragmentDetailMateri : Fragment() {
     private fun initView() {
         val isAdmin = materiViewModel.isAdmin()
         if (isAdmin){
+            binding.edtDescription1.visibility = View.VISIBLE
+            binding.edtDescription2.visibility = View.VISIBLE
             binding.btnEditMateri.visibility = View.VISIBLE
             binding.btnSaveMateri.visibility = View.VISIBLE
         }else{
+            binding.edtDescription1.visibility = View.GONE
+            binding.edtDescription2.visibility = View.GONE
             binding.btnEditMateri.visibility = View.GONE
             binding.btnSaveMateri.visibility = View.GONE
         }
