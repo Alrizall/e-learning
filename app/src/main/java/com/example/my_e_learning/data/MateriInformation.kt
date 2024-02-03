@@ -10,5 +10,4 @@ data class MateriInformation (
     @DrawableRes
     val image: Int,
     val title: String){
-
 }
