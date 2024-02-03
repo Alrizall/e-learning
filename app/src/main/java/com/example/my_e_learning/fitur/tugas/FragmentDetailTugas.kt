@@ -34,17 +34,27 @@ class FragmentDetailTugas : Fragment() {
 
     private fun initView() {
         val data = tugasViewModel.tugasInformationProvider(idTugas.idTugas)
-        binding.tvBackDeaillTugas.setOnClickListener {
+        binding.tvTugas.text = "Tugas ${data.id}"
+        if (tugasViewModel.locked(data)){
+            binding.edtDetailTugas1.isEnabled = false
+            binding.button.isEnabled = false
+        } else {
+            binding.tvDetailTugas1.text = data.decription
+            if (data.image != null){
+                binding.imageViewtugas1.visibility = View.VISIBLE
+                Glide.with(binding.imageViewtugas1.context).load(data.image).into(binding.imageViewtugas1)
+            } else {
+                binding.imageViewtugas1.visibility = View.GONE
+            }
+            binding.button.setOnClickListener{
+                tugasViewModel.lockJawaban(data)
+                binding.edtDetailTugas1.isEnabled = false
+                binding.button.isEnabled = false
+            }
+        }
+        binding.ivBacTugas.setOnClickListener {
             findNavController().popBackStack()
         }
-        binding.tvDetailTugas1.text = data.decription
-        if (data.image != null){
-            binding.imageViewtugas1.visibility = View.VISIBLE
-            Glide.with(binding.imageViewtugas1.context).load(data.image).into(binding.imageViewtugas1)
-        } else {
-            binding.imageViewtugas1.visibility = View.GONE
-        }
-
     }
 
     override fun onDestroyView() {
