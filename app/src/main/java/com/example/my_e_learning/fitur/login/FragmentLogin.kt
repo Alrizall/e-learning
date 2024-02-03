@@ -44,7 +44,9 @@ class FragmentLogin : Fragment() {
                     Toast.makeText(it.context,"masukan password", Toast.LENGTH_SHORT).show()
                 }
                 else -> {
-
+                    if (username == "admin"){
+                        viewModel.saveAdmin()
+                    }
                   viewModel.saveUserName(username)
                     findNavController().navigate(FragmentLoginDirections.actionFragmentLoginToFragmentHome())
                 }

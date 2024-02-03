@@ -1,5 +1,6 @@
 package com.example.my_e_learning.fitur.materi
 
+import android.opengl.Visibility
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -34,6 +35,14 @@ class FragmentDetailMateri : Fragment() {
     }
 
     private fun initView() {
+        val isAdmin = materiViewModel.isAdmin()
+        if (isAdmin){
+            binding.btnEditMateri.visibility = View.VISIBLE
+            binding.btnSaveMateri.visibility = View.VISIBLE
+        }else{
+            binding.btnEditMateri.visibility = View.GONE
+            binding.btnSaveMateri.visibility = View.GONE
+        }
         val data = materiViewModel.materiViewModelProvider(idMateri.idMateri)
         binding.ivTomboolbackDetail.setOnClickListener {
             findNavController().popBackStack()
