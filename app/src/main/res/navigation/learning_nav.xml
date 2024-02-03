@@ -49,7 +49,11 @@
     <fragment
         android:id="@+id/fragmentNilai"
         android:name="com.example.my_e_learning.fitur.nilai.FragmentNilai"
-        android:label="FragmentNilai" />
+        android:label="FragmentNilai" >
+        <argument
+            android:name="idNilai"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentMateri"
         android:name="com.example.my_e_learning.fitur.materi.FragmentMateri"

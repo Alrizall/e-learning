@@ -3,41 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_nilai1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="hasil nilai 1 = 80"
+        android:textColor="@color/black"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:id="@+id/tv_nilai1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="hasil nilai 1 = 80"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:layout_margin="10dp"/>
-
-        <TextView
-            android:id="@+id/tv_nilai2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="hasil nilai 2 = 80"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:layout_margin="10dp"/>
-
-    </LinearLayout>
-
-
+        tools:layout_editor_absoluteX="10dp" />
 
 
 

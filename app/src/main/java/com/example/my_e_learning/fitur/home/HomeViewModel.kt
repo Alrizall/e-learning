@@ -23,9 +23,9 @@ class HomeViewModel @Inject constructor() :
     fun duedateInformationProvider(): List<DuedateInformation> {
 
         return listOf(
-            DuedateInformation(1, "Kurikulum Baru"),
-            DuedateInformation(2,  " Kemajuan Pendidikan "),
-            DuedateInformation(3,  " Kemajuan Desain UI "),
+            DuedateInformation(1, "Tugas 1, dateline 1 hari lagi"),
+            DuedateInformation(2,  " Tugas 2, Dateline 2 hari lagi"),
+            DuedateInformation(3,  " Tugas 3, Dateline 3 hari lagi"),
         )
     }
 
