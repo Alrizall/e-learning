@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.my_e_learning.R
 import com.example.my_e_learning.data.TugasInformation
 import com.example.my_e_learning.local.PreferenceHelper
+import com.example.my_e_learning.util.KeyConstant
 import com.example.my_e_learning.util.KeyConstant.ANSWER_KEY
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -29,7 +30,8 @@ class TugasViewModel @Inject constructor(private val preferenceHelper: Preferenc
         }
     }
     fun lockJawaban (data: TugasInformation){
-        val listOfHasil = preferenceHelper.getStringInSharedPreference(ANSWER_KEY)
+        val userName = preferenceHelper.getStringInSharedPreference(KeyConstant.USERNAME_KEY)
+        val listOfHasil = preferenceHelper.getStringInSharedPreference(userName)
         if (!listOfHasil.isNullOrEmpty()){
             val consumeType: Type =
                 object : TypeToken<List<TugasInformation>>() {}.type
@@ -37,18 +39,19 @@ class TugasViewModel @Inject constructor(private val preferenceHelper: Preferenc
                 Gson().fromJson<List<TugasInformation>?>(listOfHasil, consumeType).toMutableList()
             consume.add(data)
             val saveValue = Gson().toJson(consume)
-            preferenceHelper.saveStringInSharedPreference(ANSWER_KEY,saveValue)
+            preferenceHelper.saveStringInSharedPreference(userName,saveValue)
         }else {
             val consumeType: Type =
                 object : TypeToken<List<TugasInformation>>() {}.type
             val consume: List<TugasInformation> = listOf(data)
             val saveValue = Gson().toJson(consume)
-            preferenceHelper.saveStringInSharedPreference(ANSWER_KEY,saveValue)
+            preferenceHelper.saveStringInSharedPreference(userName,saveValue)
         }
 
     }
     fun locked (data: TugasInformation) : Boolean {
-        val listOfHasil = preferenceHelper.getStringInSharedPreference(ANSWER_KEY)
+        val userName = preferenceHelper.getStringInSharedPreference(KeyConstant.USERNAME_KEY)
+        val listOfHasil = preferenceHelper.getStringInSharedPreference(userName)
         if (!listOfHasil.isNullOrEmpty()){
             val consumeType: Type =
                 object : TypeToken<List<TugasInformation>>() {}.type

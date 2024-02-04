@@ -24,8 +24,9 @@
             android:id="@+id/tv_back_quiz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:drawableStart="@drawable/tombol_back"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:padding="10dp"
             android:text="Quiz"
             android:textColor="@color/black"
@@ -48,6 +49,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view_quiz">
 
+            <ProgressBar
+                android:id="@+id/progressBar_quiz"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_quiz"
+                android:progress="50" />
+
             <TextView
                 android:id="@+id/tv_qs1"
                 android:layout_width="match_parent"
@@ -58,15 +69,6 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="italic" />
-
-            <ProgressBar
-                android:id="@+id/progressBar_quiz"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:background="@drawable/rounded_quiz"
-                android:progress="50" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/jwb_quiz1A"
@@ -162,7 +164,7 @@
                 android:gravity="center_horizontal"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:text="1. Kepanjangan dari UX desain adalah"
+                android:text="2. Kepanjangan dari UX desain adalah"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="italic" />

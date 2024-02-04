@@ -51,6 +51,7 @@ class FragmentDetailTugas : Fragment() {
                 binding.edtDetailTugas1.isEnabled = false
                 binding.button.isEnabled = false
             }
+            binding.tvDetailTugas1.text = data.decription
         }
         binding.ivBacTugas.setOnClickListener {
             findNavController().popBackStack()

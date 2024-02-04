@@ -44,7 +44,7 @@ class FragmentProfil : Fragment() {
             binding.tvNis.text = (1000  .. 9999).random().toString()
             binding.tvNamaProfil.text = viewModel.getUserName()
             binding.tvAlamat.text = "Jalan Villa Regency 1, Blok OB 8 no.29"
-            binding.tvJurusan.text = "Teknik Komputer Jaringan"
+            binding.tvJurusan.text = "Teknik Informatika"
         }
 
 

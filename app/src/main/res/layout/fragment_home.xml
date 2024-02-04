@@ -17,7 +17,7 @@
         <View
             android:id="@+id/view"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="320dp"
             android:background="@color/blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -28,8 +28,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_margin="20dp"
             android:text="Hi, User"
             android:textColor="@color/white"
             android:textSize="24sp"
@@ -41,8 +40,8 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="Lets Start Learning"
+            android:textStyle="italic"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="@+id/textView"
@@ -50,36 +49,59 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ib_profilhome"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_margin="15dp"
-            app:shapeAppearanceOverlay="@style/roundCustomCorner"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
             android:src="@drawable/foto_default"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundCustomCorner" />
 
-        <SearchView
-            android:id="@+id/sv_home"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/rounded_bg"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toStartOf="@+id/ib_home"
-            app:layout_constraintStart_toStartOf="@+id/view" />
+<!--        <SearchView-->
+<!--            android:id="@+id/sv_home"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="15dp"-->
+<!--            android:background="@drawable/rounded_bg"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/view"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/ib_home"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/view" />-->
 
-        <ImageButton
-            android:id="@+id/ib_home"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/rounded_bg"
-            android:src="@drawable/baseline_arrow_forward_ios_24"
+<!--        <ImageButton-->
+<!--            android:id="@+id/ib_home"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginEnd="15dp"-->
+<!--            android:layout_marginBottom="15dp"-->
+<!--            android:background="@drawable/rounded_bg"-->
+<!--            android:src="@drawable/baseline_arrow_forward_ios_24"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/view"-->
+<!--            app:layout_constraintEnd_toEndOf="parent" />-->
+
+        <TextView
+            android:id="@+id/tv_Pemberitahuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Pemberitahuan"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/rv_pemberitahuan"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pemberitahuan"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/item_pemberitahuan" />
 
         <TextView
             android:id="@+id/textView3"
@@ -91,7 +113,7 @@
             android:textColor="@color/black"
             android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rv_pemberitahuan" />
+            app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -259,43 +281,17 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_populer"
-            android:nestedScrollingEnabled="false"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_duedate"
             tools:listitem="@layout/item_course" />
 
-        <TextView
-            android:id="@+id/tv_Pemberitahuan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:text="Pemberitahuan"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_pemberitahuan"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="15dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_Pemberitahuan"
-            tools:listitem="@layout/item_pemberitahuan" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
