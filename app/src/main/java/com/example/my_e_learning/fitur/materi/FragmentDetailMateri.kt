@@ -90,11 +90,13 @@ class FragmentDetailMateri : Fragment() {
                         decription1 = binding.edtDescription1.text.toString(),
                         decription2 = binding.edtDescription2.text.toString(),
                         image = data.image,
-                        title = data.title
+                        title = data.title,
+                        uri = if (imageUri !=null) imageUri.toString() else null
                     )
                 )
                 binding.tvDetailMateri.text = binding.edtDescription1.text.toString()
                 binding.tvDetailMateri2.text = binding.edtDescription2.text.toString()
+                findNavController().popBackStack()
             }
 
         } else {
@@ -109,7 +111,11 @@ class FragmentDetailMateri : Fragment() {
         }
         binding.tvDetailMateri.text = data.decription1
         binding.tvDetailMateri2.text = data.decription2
-        Glide.with(binding.ivDetailMateri.context).load(data.image).into(binding.ivDetailMateri)
+        if (data.uri != null ){
+            Glide.with(binding.ivDetailMateri.context).load(Uri.parse(data.uri)).into(binding.ivDetailMateri)
+        }else {
+            Glide.with(binding.ivDetailMateri.context).load(data.image).into(binding.ivDetailMateri)
+        }
         binding.tvBackDetaillMateri.text = data.title
     }
 
