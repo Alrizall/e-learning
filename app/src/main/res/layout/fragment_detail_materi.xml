@@ -81,7 +81,7 @@
             android:layout_height="400dp"
             android:layout_margin="10dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/ss_materi_1"
+            tools:src="@drawable/ss_materi_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
