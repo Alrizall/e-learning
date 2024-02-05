@@ -13,7 +13,10 @@ import com.example.my_e_learning.databinding.FragmentNilaiBinding
 import com.example.my_e_learning.fitur.home.adapter.PemberitahuanAdapter
 import com.example.my_e_learning.fitur.materi.FragmentDetailMateriArgs
 import com.example.my_e_learning.fitur.nilai.adapter.NilaiAdapter
+import com.example.my_e_learning.util.overrideFragmentBackPressed
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FragmentNilai : Fragment(), NilaiAdapter.NilaiAdapterListener {
     private val nilaiViewModel: NilaiViewModel by viewModels()
     private var _binding: FragmentNilaiBinding? = null
@@ -36,14 +39,24 @@ class FragmentNilai : Fragment(), NilaiAdapter.NilaiAdapterListener {
 
 
     private fun initView() {
+        val data = nilaiViewModel.nilaiInformationProvider()
         binding.tvBackNilai.setOnClickListener {
-            findNavController().popBackStack()
+            findNavController().navigate(FragmentNilaiDirections.actionFragmentNilaiToFragmentHome())
+        }
+        overrideFragmentBackPressed {
+            findNavController().navigate(FragmentNilaiDirections.actionFragmentNilaiToFragmentHome())
         }
 
         binding.rvNilai.apply {
             adapter = nilaiAdapter
         }
-        nilaiAdapter.submitList(nilaiViewModel.nilaiInformationProvider())
+        if (data.isNotEmpty()){
+            nilaiAdapter.submitList(data)
+            binding.tvNilaiEmpty.visibility =View.GONE
+        }else {
+            binding.tvNilaiEmpty.visibility =View.VISIBLE
+        }
+
     }
     override fun onDestroyView() {
         super.onDestroyView()
