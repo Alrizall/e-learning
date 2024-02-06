@@ -21,7 +21,6 @@ class FragmentNilai : Fragment(), NilaiAdapter.NilaiAdapterListener {
     private val nilaiViewModel: NilaiViewModel by viewModels()
     private var _binding: FragmentNilaiBinding? = null
     private val binding get() = _binding!!
-    private val idNilai: FragmentNilaiArgs by navArgs()
     private val nilaiAdapter: NilaiAdapter by lazy { NilaiAdapter(this) }
 
     override fun onCreateView(

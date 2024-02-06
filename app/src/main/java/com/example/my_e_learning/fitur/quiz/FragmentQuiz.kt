@@ -74,7 +74,7 @@ class FragmentQuiz : Fragment() {
                             initQuestion(questionIndex = questionIndex)
                         } else {
                             viewModel.saveNilai(correctAnswer)
-                            findNavController().navigate(FragmentQuizDirections.actionFragmentQuizToFragmentNilai(1))
+                            findNavController().navigate(R.id.action_fragmentQuiz_to_fragmentNilai)
                         }
 
                     }
@@ -93,7 +93,7 @@ class FragmentQuiz : Fragment() {
                             initQuestion(questionIndex)
                         } else {
                             viewModel.saveNilai(correctAnswer)
-                            findNavController().navigate(FragmentQuizDirections.actionFragmentQuizToFragmentNilai(1))
+                            findNavController().navigate(R.id.action_fragmentQuiz_to_fragmentNilai)
                         }
                     }
                 }

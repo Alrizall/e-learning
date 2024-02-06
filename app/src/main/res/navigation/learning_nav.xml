@@ -50,9 +50,6 @@
         android:id="@+id/fragmentNilai"
         android:name="com.example.my_e_learning.fitur.nilai.FragmentNilai"
         android:label="FragmentNilai" >
-        <argument
-            android:name="idNilai"
-            app:argType="integer" />
         <action
             android:id="@+id/action_fragmentNilai_to_fragmentHome"
             app:destination="@id/fragmentHome"
