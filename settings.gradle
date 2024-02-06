@@ -14,3 +14,11 @@ dependencyResolutionManagement {
 }
 rootProject.name = "My_E_learning"
 include ':app'
+include ':feature:materi'
+include ':core'
+include ':feature:home'
+include ':feature:tugas'
+include ':feature:quiz'
+include ':feature:nilai'
+include ':feature:login'
+include ':feature:profil'

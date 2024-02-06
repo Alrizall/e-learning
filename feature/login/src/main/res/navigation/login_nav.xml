@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/login_nav"
+    app:startDestination="@id/fragmentLogin">
+
+
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.example.login.FragmentLogin"
+        android:label="FragmentLogin" >
+        <deepLink
+            app:uri="android-app://example.google.app/login" />
+    </fragment>
+</navigation>

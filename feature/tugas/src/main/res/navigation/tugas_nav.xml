@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tugas_nav"
+    app:startDestination="@id/fragmentTugas2">
+
+    <fragment
+        android:id="@+id/fragmentTugas2"
+        android:name="com.example.tugas.FragmentTugas"
+        android:label="FragmentTugas" >
+        <action
+            android:id="@+id/action_fragmentTugas2_to_fragmentDetailTugas2"
+            app:destination="@id/fragmentDetailTugas2" />
+        <deepLink
+            app:uri="android-app://example.google.app/tugas" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetailTugas2"
+        android:name="com.example.tugas.FragmentDetailTugas"
+        android:label="FragmentDetailTugas" >
+        <argument
+            android:name="idTugas"
+            app:argType="integer" />
+    </fragment>
+</navigation>

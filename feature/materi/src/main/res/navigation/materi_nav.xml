@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/materi_nav"
+    app:startDestination="@id/fragmentMateri2">
+
+    <fragment
+        android:id="@+id/fragmentMateri2"
+        android:name="com.example.materi.FragmentMateri"
+        android:label="FragmentMateri" >
+        <action
+            android:id="@+id/action_fragmentMateri2_to_fragmentDetailMateri2"
+            app:destination="@id/fragmentDetailMateri2" />
+        <deepLink
+            app:uri="android-app://example.google.app/materi" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentDetailMateri2"
+        android:name="com.example.materi.FragmentDetailMateri"
+        android:label="FragmentDetailMateri" >
+        <argument
+            android:name="idMateri"
+            app:argType="integer" />
+    </fragment>
+</navigation>
