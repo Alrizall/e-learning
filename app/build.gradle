@@ -73,5 +73,7 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.9.0'
 
     implementation 'com.google.code.gson:gson:2.10.1'
+    //splash
+    implementation 'androidx.core:core-splashscreen:1.0.0'
 
 }

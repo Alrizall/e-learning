@@ -104,10 +104,10 @@ class FragmentDetailMateri : Fragment() {
         binding.tvDetailMateri.text = data.decription1
         binding.tvDetailMateri2.text = data.decription2
         if (data.uri != null) {
-            Glide.with(binding.ivDetailMateri.context).load(Uri.parse(data.uri))
+            Glide.with(binding.ivDetailMateri.context).load(Uri.parse(data.uri)).error(R.drawable.ss_materi_1)
                 .into(binding.ivDetailMateri)
         } else {
-            Glide.with(binding.ivDetailMateri.context).load(data.image).into(binding.ivDetailMateri)
+            Glide.with(binding.ivDetailMateri.context).load(data.image).error(R.drawable.ss_materi_1).into(binding.ivDetailMateri)
         }
         binding.tvBackDetaillMateri.text = data.title
     }
