@@ -51,7 +51,7 @@ class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListen
                 .build()
             findNavController().navigate(request)
         } else {
-            Glide.with(binding.ibProfilhome.context).load(R.drawable.pass_foto)
+            Glide.with(binding.ibProfilhome.context).load(R.drawable.pass_foto_profil)
                 .into(binding.ibProfilhome)
             binding.cvCat1.setOnClickListener {
                 val request = NavDeepLinkRequest.Builder

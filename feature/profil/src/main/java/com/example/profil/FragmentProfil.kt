@@ -41,7 +41,7 @@ class FragmentProfil : Fragment() {
                     .build()
                 findNavController().navigate(request)
             }
-            Glide.with(binding.imageViewProfil.context).load(R.drawable.pass_foto).into(binding.imageViewProfil)
+            Glide.with(binding.imageViewProfil.context).load(R.drawable.pass_foto_profil).into(binding.imageViewProfil)
             binding.tvUsername.text = viewModel.getUserName()
             binding.tvNis.text = (1000  .. 9999).random().toString()
             binding.tvNamaProfil.text = viewModel.getUserName()
