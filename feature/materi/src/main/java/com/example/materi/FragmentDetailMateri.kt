@@ -38,7 +38,7 @@ class FragmentDetailMateri : Fragment() {
             } catch (e: Exception) {
                 Log.e("tag", "${e.message}")
                 Snackbar.make(
-                    requireContext(), binding.root, "tidak bisa load image", Snackbar.LENGTH_SHORT
+                    requireContext(), binding.root, "tidak bisa di load", Snackbar.LENGTH_SHORT
                 ).show()
             }
         }

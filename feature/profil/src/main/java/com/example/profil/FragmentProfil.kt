@@ -7,11 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.profil.databinding.FragmentProfilBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FragmentProfil : Fragment() {
@@ -35,11 +39,18 @@ class FragmentProfil : Fragment() {
     private fun initView (){
         if (viewModel.getUserName().isNotEmpty()){
             binding.btnLogout.setOnClickListener{
-                viewModel.deleteUserName()
-                val request = NavDeepLinkRequest.Builder
-                    .fromUri("android-app://example.google.app/login".toUri())
-                    .build()
-                findNavController().navigate(request)
+                viewLifecycleOwner.lifecycleScope.launch {
+                    repeatOnLifecycle(Lifecycle.State.STARTED) {
+                     viewModel.initLogout {
+
+                         val request = NavDeepLinkRequest.Builder
+                             .fromUri("android-app://example.google.app/login".toUri())
+                             .build()
+                         findNavController().navigate(request)
+                     }
+                    }
+                }
+
             }
             Glide.with(binding.imageViewProfil.context).load(R.drawable.pass_foto_profil).into(binding.imageViewProfil)
             binding.tvUsername.text = viewModel.getUserName()

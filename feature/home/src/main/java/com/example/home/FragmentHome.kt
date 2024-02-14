@@ -27,7 +27,6 @@ class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListen
     private val homeViewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
     private val pemberitahuanAdapter: PemberitahuanAdapter by lazy { PemberitahuanAdapter(this) }
     private val duedateAdapter: DuedateAdapter by lazy { DuedateAdapter(this) }
 

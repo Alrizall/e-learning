@@ -3,11 +3,6 @@ package com.example.core.local
 import android.content.SharedPreferences
 import javax.inject.Inject
 
-/**
- * Created by Ian Damping on 30,June,2020
- * Github https://github.com/iandamping
- * Indonesia.
- */
 class PreferenceHelperImpl @Inject constructor(
     private val sharedPreferences: SharedPreferences,
     private val editor: SharedPreferences.Editor

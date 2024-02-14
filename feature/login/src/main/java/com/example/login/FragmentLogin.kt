@@ -1,22 +1,41 @@
 package com.example.login
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import com.example.login.databinding.FragmentLoginBinding
+import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
+import com.google.android.gms.auth.api.identity.BeginSignInRequest
+import com.google.android.gms.auth.api.identity.Identity
+import com.google.android.gms.auth.api.identity.SignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FragmentLogin : Fragment() {
-
-    private val viewModel : LoginViewModel by viewModels()
+    private lateinit var intentLauncher: ActivityResultLauncher<Intent>
+    private val viewModel: LoginViewModel by viewModels()
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
@@ -31,7 +50,41 @@ class FragmentLogin : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+
+        intentLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) {
+
+        }
+        binding.loginGoogle.setOnClickListener {
+            viewLifecycleOwner.lifecycleScope.launch {
+                repeatOnLifecycle(Lifecycle.State.STARTED) {
+                    val intent = viewModel.initSignIn()
+                    intentLauncher.launch(intent)
+                }
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.userDataState.onEach {
+                    when {
+                        it.errorMessage.isNotEmpty() -> {
+                            Log.e("TAG", "onViewCreated: ${it.errorMessage} ")
+                        }
+
+                        it.user != null -> {
+                            val request = NavDeepLinkRequest.Builder
+                                .fromUri("android-app://example.google.app/home".toUri())
+                                .build()
+                            findNavController().navigate(request)
+                        }
+                    }
+                }.launchIn(this)
+            }
+        }
     }
+
 
     private fun initView() {
         binding.btnLogin.setOnClickListener {
@@ -42,20 +95,21 @@ class FragmentLogin : Fragment() {
                 username.isEmpty() -> {
                     Toast.makeText(it.context, "masukan username", Toast.LENGTH_SHORT).show()
                 }
+
                 password.isEmpty() -> {
-                    Toast.makeText(it.context,"masukan password", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(it.context, "masukan password", Toast.LENGTH_SHORT).show()
                 }
+
                 else -> {
-                    if (username == "admin"){
+                    if (username == "admin") {
                         viewModel.saveAdmin()
                     }
-                  viewModel.saveUserName(username)
+                    viewModel.saveUserName(username)
                     val request = NavDeepLinkRequest.Builder
                         .fromUri("android-app://example.google.app/home".toUri())
                         .build()
                     findNavController().navigate(request)
                 }
-
             }
         }
     }
