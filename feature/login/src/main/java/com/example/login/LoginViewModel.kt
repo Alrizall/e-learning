@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.core.data.ProfileRemoteDataSource
 import com.example.core.local.PreferenceHelper
 import com.example.core.model.DataSourceResult
+import com.example.core.model.UserProfileUiState
 import com.example.core.util.KeyConstant.ADMIN_KEY
 import com.example.core.util.KeyConstant.USERNAME_KEY
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -24,7 +25,7 @@ class LoginViewModel @Inject constructor(
     private val profileRemoteDataSource: ProfileRemoteDataSource
 ) :
     ViewModel() {
-
+// ToDO untuk profil dan home
     private val _userDataState: MutableStateFlow<UserProfileUiState> = MutableStateFlow(
         UserProfileUiState.initial())
     val userDataState : StateFlow<UserProfileUiState> get() = _userDataState.asStateFlow()

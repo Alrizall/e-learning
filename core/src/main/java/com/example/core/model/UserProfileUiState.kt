@@ -1,4 +1,4 @@
-package com.example.login
+package com.example.core.model
 
 import com.ian.junemon.foodiepedia.core.data.datasource.remote.firebaseuser.AuthenticatedUserInfo
 
