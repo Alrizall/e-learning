@@ -1,0 +1,31 @@
+[
+  {
+    "name": "login_nav",
+    "navigationXmlIds": [],
+    "deepLinks": [
+      {
+        "schemes": [
+          "android-app"
+        ],
+        "host": "example.google.app",
+        "port": -1,
+        "path": "/login",
+        "sourceFilePosition": {
+          "mSourceFile": {
+            "mFilePath": "C:\\Users\\alriz\\AndroidStudioProjects\\e-learning\\feature\\login\\src\\main\\res\\navigation\\login_nav.xml",
+            "mDescription": "login_nav"
+          },
+          "mSourcePosition": {
+            "mStartLine": 11,
+            "mStartColumn": 8,
+            "mStartOffset": 414,
+            "mEndLine": 12,
+            "mEndColumn": 63,
+            "mEndOffset": 488
+          }
+        },
+        "isAutoVerify": false
+      }
+    ]
+  }
+]

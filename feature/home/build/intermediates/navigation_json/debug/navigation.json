@@ -1,0 +1,31 @@
+[
+  {
+    "name": "home_nav",
+    "navigationXmlIds": [],
+    "deepLinks": [
+      {
+        "schemes": [
+          "android-app"
+        ],
+        "host": "example.google.app",
+        "port": -1,
+        "path": "/home",
+        "sourceFilePosition": {
+          "mSourceFile": {
+            "mFilePath": "C:\\Users\\alriz\\AndroidStudioProjects\\e-learning\\feature\\home\\src\\main\\res\\navigation\\home_nav.xml",
+            "mDescription": "home_nav"
+          },
+          "mSourcePosition": {
+            "mStartLine": 11,
+            "mStartColumn": 8,
+            "mStartOffset": 410,
+            "mEndLine": 12,
+            "mEndColumn": 62,
+            "mEndOffset": 483
+          }
+        },
+        "isAutoVerify": false
+      }
+    ]
+  }
+]

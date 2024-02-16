@@ -24,10 +24,14 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class FragmentHome : Fragment(), PemberitahuanAdapter.PemberitahuanAdapterListener,
     DuedateAdapter.DuedateAdapterListener {
+
     private val loginViewModel: LoginViewModel by viewModels()
     private val homeViewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+
+
 
     private val pemberitahuanAdapter: PemberitahuanAdapter by lazy { PemberitahuanAdapter(this) }
     private val duedateAdapter: DuedateAdapter by lazy { DuedateAdapter(this) }

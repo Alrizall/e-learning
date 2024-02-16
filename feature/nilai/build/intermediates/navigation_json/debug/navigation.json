@@ -1,0 +1,31 @@
+[
+  {
+    "name": "nilai_nav",
+    "navigationXmlIds": [],
+    "deepLinks": [
+      {
+        "schemes": [
+          "android-app"
+        ],
+        "host": "example.google.app",
+        "port": -1,
+        "path": "/nilai",
+        "sourceFilePosition": {
+          "mSourceFile": {
+            "mFilePath": "C:\\Users\\alriz\\AndroidStudioProjects\\e-learning\\feature\\nilai\\src\\main\\res\\navigation\\nilai_nav.xml",
+            "mDescription": "nilai_nav"
+          },
+          "mSourcePosition": {
+            "mStartLine": 10,
+            "mStartColumn": 8,
+            "mStartOffset": 412,
+            "mEndLine": 11,
+            "mEndColumn": 63,
+            "mEndOffset": 486
+          }
+        },
+        "isAutoVerify": false
+      }
+    ]
+  }
+]

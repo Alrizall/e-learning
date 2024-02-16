@@ -1,0 +1,31 @@
+[
+  {
+    "name": "quiz_nav",
+    "navigationXmlIds": [],
+    "deepLinks": [
+      {
+        "schemes": [
+          "android-app"
+        ],
+        "host": "example.google.app",
+        "port": -1,
+        "path": "/quiz",
+        "sourceFilePosition": {
+          "mSourceFile": {
+            "mFilePath": "C:\\Users\\alriz\\AndroidStudioProjects\\e-learning\\feature\\quiz\\src\\main\\res\\navigation\\quiz_nav.xml",
+            "mDescription": "quiz_nav"
+          },
+          "mSourcePosition": {
+            "mStartLine": 10,
+            "mStartColumn": 8,
+            "mStartOffset": 406,
+            "mEndLine": 11,
+            "mEndColumn": 62,
+            "mEndOffset": 479
+          }
+        },
+        "isAutoVerify": false
+      }
+    ]
+  }
+]

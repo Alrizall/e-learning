@@ -1,0 +1,31 @@
+[
+  {
+    "name": "materi_nav",
+    "navigationXmlIds": [],
+    "deepLinks": [
+      {
+        "schemes": [
+          "android-app"
+        ],
+        "host": "example.google.app",
+        "port": -1,
+        "path": "/materi",
+        "sourceFilePosition": {
+          "mSourceFile": {
+            "mFilePath": "C:\\Users\\alriz\\AndroidStudioProjects\\e-learning\\feature\\materi\\src\\main\\res\\navigation\\materi_nav.xml",
+            "mDescription": "materi_nav"
+          },
+          "mSourcePosition": {
+            "mStartLine": 13,
+            "mStartColumn": 8,
+            "mStartOffset": 576,
+            "mEndLine": 14,
+            "mEndColumn": 64,
+            "mEndOffset": 651
+          }
+        },
+        "isAutoVerify": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "name": "tugas_nav",
+    "navigationXmlIds": [],
+    "deepLinks": [
+      {
+        "schemes": [
+          "android-app"
+        ],
+        "host": "example.google.app",
+        "port": -1,
+        "path": "/tugas",
+        "sourceFilePosition": {
+          "mSourceFile": {
+            "mFilePath": "C:\\Users\\alriz\\AndroidStudioProjects\\e-learning\\feature\\tugas\\src\\main\\res\\navigation\\tugas_nav.xml",
+            "mDescription": "tugas_nav"
+          },
+          "mSourcePosition": {
+            "mStartLine": 13,
+            "mStartColumn": 8,
+            "mStartOffset": 567,
+            "mEndLine": 14,
+            "mEndColumn": 63,
+            "mEndOffset": 641
+          }
+        },
+        "isAutoVerify": false
+      }
+    ]
+  }
+]

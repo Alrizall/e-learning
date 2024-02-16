@@ -1,0 +1,31 @@
+[
+  {
+    "name": "profil_nav",
+    "navigationXmlIds": [],
+    "deepLinks": [
+      {
+        "schemes": [
+          "android-app"
+        ],
+        "host": "example.google.app",
+        "port": -1,
+        "path": "/profil",
+        "sourceFilePosition": {
+          "mSourceFile": {
+            "mFilePath": "C:\\Users\\alriz\\AndroidStudioProjects\\e-learning\\feature\\profil\\src\\main\\res\\navigation\\profil_nav.xml",
+            "mDescription": "profil_nav"
+          },
+          "mSourcePosition": {
+            "mStartLine": 10,
+            "mStartColumn": 8,
+            "mStartOffset": 418,
+            "mEndLine": 11,
+            "mEndColumn": 64,
+            "mEndOffset": 493
+          }
+        },
+        "isAutoVerify": false
+      }
+    ]
+  }
+]

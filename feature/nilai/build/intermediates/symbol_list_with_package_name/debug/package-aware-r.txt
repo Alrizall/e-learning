@@ -1,0 +1,24 @@
+com.example.nilai
+color aqua
+color black
+color blue
+color blue01
+color blue02
+color green
+color greenlite
+color grey
+color orange
+color purple
+color white
+color yellow
+color yellowlite
+id fragmentNilai
+id nilai_nav
+id rv_nilai
+id tv_back_nilai
+id tv_nilai1
+id tv_nilai_empty
+id view_quiz
+layout fragment_nilai
+layout item_nilai
+navigation nilai_nav
